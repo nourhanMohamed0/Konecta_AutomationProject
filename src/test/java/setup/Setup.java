@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.asserts.SoftAssert;
 import pages.HomePage;
 import pages.RegisterPage;
+import pages.ShoppingCart;
 import tests.RegisterForm;
 
 import java.time.Duration;
@@ -20,6 +21,7 @@ public class Setup {
     protected static SoftAssert softAssert;
     protected HomePage homePage;
     protected RegisterPage registerPage;
+    protected ShoppingCart shoppingCart;
 
 
     @BeforeClass

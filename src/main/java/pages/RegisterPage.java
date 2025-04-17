@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class RegisterPage{
     private WebDriver driver;
@@ -39,6 +40,7 @@ public class RegisterPage{
     private By invalidPhoneNumber = By.xpath("//label[contains(text(), 'maximum 20')]");
     private By invalidCity = By.xpath("//label[text()='Use maximum 25 character']");
     private By invalidState = By.xpath("//label[text()='Use maximum 10 character']");
+
 
 
     public void setUsernameField(String username) {

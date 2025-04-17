@@ -52,20 +52,23 @@ public class loginForm extends Setup {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("loader")));
         wait.until(ExpectedConditions.textToBePresentInElement(homePage.getErrMsgInvalidCredentials(), "Incorrect user name or password."));
     }
-//    @Test
-//    public void TC5_BlockingAccount(){
-//        homePage.clickMyAccIcon();
-//        homePage.getUsernameLogin().sendKeys("testy");
-//        wait.until(ExpectedConditions.elementToBeClickable(homePage.getPasswordLogin()));
-//        homePage.getPasswordLogin().sendKeys(validPassword+"50");
-//        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("loader")));
-//        wait.until(ExpectedConditions.elementToBeClickable(homePage.getSignInBtn()));
-//        for(int i=0;i<10;i++){
-//            wait.until(ExpectedConditions.elementToBeClickable(homePage.getSignInBtn()));
-//            homePage.getSignInBtn().click();
-//        }
-//        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("loader")));
-//        wait.until(ExpectedConditions.textToBePresentInElement(homePage.getErrMsgInvalidCredentials(), "User is temporary blocked from login."));
-//
-//    }
+    @Test
+    public void TC5_BlockingAccount(){
+        homePage.clickMyAccIcon();
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("loader")));
+        homePage.getUsernameLogin().sendKeys("testy");
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("loader")));
+        wait.until(ExpectedConditions.elementToBeClickable(homePage.getPasswordLogin()));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("loader")));
+        homePage.getPasswordLogin().sendKeys(validPassword+"50");
+        wait.until(ExpectedConditions.elementToBeClickable(homePage.getSignInBtn()));
+        for(int i=0;i<7;i++){
+            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("loader")));
+            wait.until(ExpectedConditions.elementToBeClickable(homePage.getSignInBtn()));
+            homePage.getSignInBtn().click();
+        }
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("loader")));
+        Assert.assertEquals(homePage.getErrMsgInvalidCredentials().getText(), "User is temporary blocked from login");
+
+    }
 }
