@@ -30,9 +30,15 @@ public class RegisterPage{
     private By registerBtn=By.id("register_btn");
     private By RegisterLabel=By.xpath("//h3[@translate='CREATE_ACCOUNT']");
     private By alreadyExistingAcc=By.xpath("//label[@data-ng-show=\"!registerSuccess\"]");
+    private By invalidUsername=By.xpath("//label[@data-ng-show=\"!registerSuccess\"]");
     private By emailFieldMsgReq=By.xpath("//label[@data-ng-click=\"labelClicked()\" and contains(text(),'Email field is required')]");
     private By passFieldMsgReq=By.xpath("//label[@data-ng-click=\"labelClicked()\" and contains(text(),'Password field is required')]");
     private By confirmPassFieldMsgReq=By.xpath("//label[@data-ng-click=\"labelClicked()\" and contains(text(),'Confirm password field is required')]");
+    private By mismatchPassword=By.xpath("//label[@data-ng-click=\"labelClicked()\" and contains(text(),'Passwords do not match')]");
+    private By invalidLast_FirstName=By.xpath("//label[@class=\"animated invalid\"]");
+    private By invalidPhoneNumber = By.xpath("//label[contains(text(), 'maximum 20')]");
+    private By invalidCity = By.xpath("//label[text()='Use maximum 25 character']");
+    private By invalidState = By.xpath("//label[text()='Use maximum 10 character']");
 
 
     public void setUsernameField(String username) {
@@ -40,8 +46,17 @@ public class RegisterPage{
         wait.until(ExpectedConditions.elementToBeClickable(usernameField));
         driver.findElement(usernameField).sendKeys(username);
     }
-    public WebElement getRegisterLabel(){
-        return driver.findElement(RegisterLabel);
+    public WebElement getInvalidLast_FirstName(){
+        return driver.findElement(invalidLast_FirstName);
+    }
+    public WebElement getInvalidCity(){
+        return driver.findElement(invalidCity);
+    }
+    public WebElement getInvalidState(){
+        return driver.findElement(invalidState);
+    }
+    public WebElement getInvalidPhoneNumber(){
+        return driver.findElement(invalidPhoneNumber);
     }
     public WebElement getEmailFieldMsgReq(){
         return driver.findElement(emailFieldMsgReq);
@@ -49,11 +64,17 @@ public class RegisterPage{
     public WebElement getPassFieldMsgReq(){
         return driver.findElement(passFieldMsgReq);
     }
+    public WebElement getPassMismatchMsg(){
+        return driver.findElement(mismatchPassword);
+    }
     public WebElement getConfirmPassFieldMsgReq(){
         return driver.findElement(confirmPassField);
     }
     public WebElement getAlreadyExistingAcc(){
         return driver.findElement(alreadyExistingAcc);
+    }
+    public WebElement getInvalidUsername(){
+        return driver.findElement(invalidUsername);
     }
     public void setAddressField(String address) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(addressField));
