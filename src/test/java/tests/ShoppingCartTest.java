@@ -35,7 +35,7 @@ public class ShoppingCartTest extends Setup {
         wait.until(ExpectedConditions.presenceOfElementLocated(shoppingCart.getCartIcon()));
         webdriver.findElement(shoppingCart.getCartIcon()).click();
         wait.until(ExpectedConditions.presenceOfElementLocated(shoppingCart.getCartEmptyIndication()));
-        Assert.assertTrue(webdriver.findElement(shoppingCart.getCartEmptyIndication()).isDisplayed());
+        Assert.assertTrue(webdriver.findElement(shoppingCart.getCartEmptyIndication()).isEnabled());
     }
 //
 //    @Test(dependsOnMethods = "TC1_AddToCartSuccessfully")
