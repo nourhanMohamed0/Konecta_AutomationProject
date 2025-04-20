@@ -48,28 +48,28 @@ public class ShoppingCartTest extends Setup {
         wait.until(ExpectedConditions.presenceOfElementLocated(shoppingCart.getCartEmptyIndication()));
         Assert.assertTrue(webdriver.findElement(shoppingCart.getCartEmptyIndication()).isDisplayed());
     }
-//    @Test(dependsOnMethods = "TC1_AddToCartSuccessfully")
-//    public void TC5_CheckEditFromCart(){
-//        shoppingCart.getEditBtn().get(0).click();
-//        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(shoppingCart.getAddToCartBtn()));
-//        shoppingCart.increaseQuantity();
-//        shoppingCart.increaseQuantity();
-//        shoppingCart.increaseQuantity();
-//        webdriver.findElement(shoppingCart.getAddToCartBtn()).click();
-//        webdriver.findElement(shoppingCart.getCartIcon()).click();
-//        Assert.assertEquals(shoppingCart.getProductsQuantitiesInCart().get(0),4);
-//    }
-//    @Test
-//    public void TC6_checkMaxQuantity(){
-//        wait.until(ExpectedConditions.presenceOfElementLocated(shoppingCart.getSpeakersSection()));
-//        webdriver.findElement(shoppingCart.getSpeakersSection()).click();
-//        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(shoppingCart.getSpeakersProducts()));
-//        shoppingCart.getAllSpeakerProduct().get(0).click();
-//        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(shoppingCart.getAddToCartBtn()));
-//        for(int i=0;i<10;i++)
-//        shoppingCart.increaseQuantity();
-//        webdriver.findElement(shoppingCart.getAddToCartBtn()).click();
-//        webdriver.findElement(shoppingCart.getCartIcon()).click();
-//        Assert.assertEquals(shoppingCart.getNumberOnCart(),10);
-//    }
+    @Test(dependsOnMethods = "TC1_AddToCartSuccessfully")
+    public void TC5_CheckEditFromCart(){
+        shoppingCart.getEditBtn().get(0).click();
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(shoppingCart.getAddToCartBtn()));
+        shoppingCart.increaseQuantity();
+        shoppingCart.increaseQuantity();
+        shoppingCart.increaseQuantity();
+        webdriver.findElement(shoppingCart.getAddToCartBtn()).click();
+        webdriver.findElement(shoppingCart.getCartIcon()).click();
+        Assert.assertEquals(shoppingCart.getProductsQuantitiesInCart().get(0),4);
+    }
+    @Test
+    public void TC6_checkMaxQuantity(){
+        wait.until(ExpectedConditions.presenceOfElementLocated(shoppingCart.getSpeakersSection()));
+        webdriver.findElement(shoppingCart.getSpeakersSection()).click();
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(shoppingCart.getSpeakersProducts()));
+        shoppingCart.getAllSpeakerProduct().get(0).click();
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(shoppingCart.getAddToCartBtn()));
+        for(int i=0;i<10;i++)
+        shoppingCart.increaseQuantity();
+        webdriver.findElement(shoppingCart.getAddToCartBtn()).click();
+        webdriver.findElement(shoppingCart.getCartIcon()).click();
+        Assert.assertEquals(shoppingCart.getNumberOnCart(),10);
+    }
 }
