@@ -42,7 +42,7 @@ public class Setup {
     }
     @AfterClass
     public void tearDown(){
-//        webdriver.quit();
+        webdriver.quit();
     }
 
 }

@@ -15,11 +15,11 @@ public class ShoppingCart {
     private By shoppingCartLabel=By.xpath("//h3[contains(text(), 'SHOPPING CART')]");
     private By productsNameInCart=By.xpath("//tr/td/label[@class='roboto-regular productName ng-binding']");
     private By productQuantityInCart=By.xpath("//td[@class='smollCell quantityMobile']");
-    private By overAllProductQuantityInLabel=By.xpath("//span[@ng-show='cart.productsInCart.length > 0']");
     private By removeBtns=By.xpath("//a[@class='remove red ng-scope']");
     private By editBtns=By.xpath("//a[@translate='EDIT']");
     private By productPrice=By.xpath("//td/p[@class='price roboto-regular ng-binding']");
-    private By speakersSection=By.id("speakersImg");
+//    private By speakersSection=By.id("speakersImg");
+    private By speakersSection=By.xpath("//span[@aria-label='SpeakersCategoryTxt']");
     private By speakersProducts=By.xpath("//a[@class='productName ng-binding']");
     private By addToCartBtn=By.name("save_to_cart");
     private By cartIcon=By.id("menuCart");
@@ -69,10 +69,6 @@ public class ShoppingCart {
             productsQuantities.add(Integer.parseInt(element.getText().trim()));
         }
         return productsQuantities;
-    }
-    public int getOverAllProductsQuantityInLabel(){
-        String quantity= webDriver.findElement(overAllProductQuantityInLabel).getText();
-        return Integer.parseInt(quantity);
     }
     public List<WebElement> getRemoveBtn(){
         return webDriver.findElements(removeBtns);
