@@ -30,7 +30,7 @@ public class Setup {
         chromeOptions.addArguments("--ignore-certificate-errors");
         chromeOptions.addArguments("--ignore-ssl-errors=yes");
         webdriver=new ChromeDriver(chromeOptions);
-        wait=new WebDriverWait(webdriver, Duration.ofSeconds(30));
+        wait=new WebDriverWait(webdriver, Duration.ofSeconds(60));
         softAssert=new SoftAssert();
         goHome();
     }

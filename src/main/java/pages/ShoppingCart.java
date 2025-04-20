@@ -23,7 +23,7 @@ public class ShoppingCart {
     private By speakersProducts=By.xpath("//a[@class='productName ng-binding']");
     private By addToCartBtn=By.name("save_to_cart");
     private By cartIcon=By.id("menuCart");
-    private By cartEmptyIndication=By.linkText("CONTINUE SHOPPING");
+    private By cartEmptyIndication=By.xpath("//a[@translate='CONTINUE_SHOPPING']");
     private By numberOnCart=By.cssSelector("span.cart.ng-binding");
     private By increaseQuantity=By.cssSelector(".plus");
     private By decreaseQuantity=By.cssSelector(".minus");

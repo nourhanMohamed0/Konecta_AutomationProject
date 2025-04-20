@@ -16,7 +16,6 @@ public class HomePage {
     private By errMsgEmptyUsername=By.xpath("//label[text()='Username field is required']");
     private By errMsgInvalidCredentials=By.id("signInResultMessage");
     private By createAccBtn=By.xpath("//a[@translate='CREATE_NEW_ACCOUNT']");
-//    private By logoutBtn=By.xpath("");
 
     public void clickMyAccIcon(){
         driver.findElement(myAccIcon).click();
