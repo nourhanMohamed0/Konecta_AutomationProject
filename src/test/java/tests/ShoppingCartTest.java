@@ -37,17 +37,17 @@ public class ShoppingCartTest extends Setup {
         wait.until(ExpectedConditions.presenceOfElementLocated(shoppingCart.getCartEmptyIndication()));
         Assert.assertTrue(webdriver.findElement(shoppingCart.getCartEmptyIndication()).isEnabled());
     }
-//
-//    @Test(dependsOnMethods = "TC1_AddToCartSuccessfully")
-//    public void TC3_CheckNumberOnCart(){
-//        Assert.assertEquals(shoppingCart.getNumberOnCart(),1);
-//    }
-//    @Test(dependsOnMethods = "TC1_AddToCartSuccessfully")
-//    public void TC4_removeFromCart(){
-//        shoppingCart.getRemoveBtn().get(0).click();
-//        wait.until(ExpectedConditions.presenceOfElementLocated(shoppingCart.getCartEmptyIndication()));
-//        Assert.assertTrue(webdriver.findElement(shoppingCart.getCartEmptyIndication()).isDisplayed());
-//    }
+
+    @Test(dependsOnMethods = "TC1_AddToCartSuccessfully")
+    public void TC3_CheckNumberOnCart(){
+        Assert.assertEquals(shoppingCart.getNumberOnCart(),1);
+    }
+    @Test(dependsOnMethods = "TC1_AddToCartSuccessfully")
+    public void TC4_removeFromCart(){
+        shoppingCart.getRemoveBtn().get(0).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(shoppingCart.getCartEmptyIndication()));
+        Assert.assertTrue(webdriver.findElement(shoppingCart.getCartEmptyIndication()).isDisplayed());
+    }
 //    @Test(dependsOnMethods = "TC1_AddToCartSuccessfully")
 //    public void TC5_CheckEditFromCart(){
 //        shoppingCart.getEditBtn().get(0).click();
