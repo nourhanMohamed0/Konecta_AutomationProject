@@ -18,8 +18,8 @@ public class ShoppingCart {
     private By removeBtns=By.xpath("//a[@class='remove red ng-scope']");
     private By editBtns=By.xpath("//a[@translate='EDIT']");
     private By productPrice=By.xpath("//td/p[@class='price roboto-regular ng-binding']");
-//    private By speakersSection=By.id("speakersImg");
-    private By speakersSection=By.xpath("//span[@aria-label='SpeakersCategoryTxt']");
+    private By speakersSection=By.id("speakersImg");
+//    private By speakersSection=By.xpath("//span[@aria-label='SpeakersCategoryTxt']");
     private By speakersProducts=By.xpath("//a[@class='productName ng-binding']");
     private By addToCartBtn=By.name("save_to_cart");
     private By cartIcon=By.id("menuCart");
