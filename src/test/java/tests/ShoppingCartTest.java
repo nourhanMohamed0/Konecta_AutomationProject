@@ -30,13 +30,13 @@ public class ShoppingCartTest extends Setup {
         List<String> products=shoppingCart.getProductsNamesInCart();
         Assert.assertEquals(chosenProduct.toLowerCase(),products.get(0).toLowerCase());
     }
-//    @Test
-//    public void TC2_CheckEmptyCart(){
-//        wait.until(ExpectedConditions.presenceOfElementLocated(shoppingCart.getCartIcon()));
-//        webdriver.findElement(shoppingCart.getCartIcon()).click();
-//        wait.until(ExpectedConditions.presenceOfElementLocated(shoppingCart.getCartEmptyIndication()));
-//        Assert.assertTrue(webdriver.findElement(shoppingCart.getCartEmptyIndication()).isDisplayed());
-//    }
+    @Test
+    public void TC2_CheckEmptyCart(){
+        wait.until(ExpectedConditions.presenceOfElementLocated(shoppingCart.getCartIcon()));
+        webdriver.findElement(shoppingCart.getCartIcon()).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(shoppingCart.getCartEmptyIndication()));
+        Assert.assertTrue(webdriver.findElement(shoppingCart.getCartEmptyIndication()).isDisplayed());
+    }
 //
 //    @Test(dependsOnMethods = "TC1_AddToCartSuccessfully")
 //    public void TC3_CheckNumberOnCart(){
